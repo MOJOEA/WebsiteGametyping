@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="from-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="text">Login</h2>
+        <form action="/WebsiteLogin/process-login.php" id="LoginForm" method="POST">
+
+            <input type="text" id="username" name="username" placeholder="Username" class="input-box">
+
+            <div class="password-box">
+                <input type="password" id="password" name="password" placeholder="Password" class="input-box">
+                <button type="button" class="toggle-btn" onclick="togglePassword()">👁</button>
+            </div>
+
+            <h4 class="text" id="error-msg" ></h4>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <script src="login.js"></script>
+        <div class="box-link">
+            <a href="from-Register.html" class="small-link">Sign in</a> / 
+            <a href="#" class="small-link">Forgot password</a>
+        </div>
+    </div>
+</body>
+</html>
