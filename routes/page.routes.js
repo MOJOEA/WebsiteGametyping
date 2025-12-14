@@ -10,7 +10,7 @@ router.get("/form-login", (req, res) => {
 });
 
 router.get("/form-register", (req, res) => {
-  res.render("form-register");
+  res.render("form-register", { error: "" });
 });
 
 module.exports = router;
