@@ -4,32 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signin</title>
-    <link rel="stylesheet" href="form-register.css">
+    <link rel="stylesheet" href="/form-register.css">
 </head>
 <body>
     <div class="Register-container">
         <h2 class="text">Signin</h2>
 
-        <form  action="/WebsiteLogin/process-register.php" id="RegisterForm" method="POST">
+        <form action="/process/register" id="RegisterForm" method="POST">
+            <input type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Username" 
+                class="input-box">
 
-            <input type="text" id="username" name="username" placeholder="Username" class="input-box">
-
-            <input type="email" id="email" name="email" placeholder="Email" class="input-box">
+            <input type="email" 
+                id="useremail" 
+                name="useremail" 
+                placeholder="Email" 
+                class="input-box">
 
             <div class="password-box">
-                <input type="password" id="password" name="password" placeholder="Password" class="input-box">
+                <input type="password" 
+                    id="password_1" 
+                    name="password" 
+                    placeholder="Password" 
+                    class="input-box">
+
                 <button type="button" class="toggle-btn" onclick="togglePassword()">👁</button>
             </div>
 
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" class="input-box">
+            <input type="password" 
+                id="password_2" 
+                name="confirmPassword" 
+                placeholder="Confirm Password" 
+                class="input-box">
 
-            <h4 class="text" id="error-msg" ></h4>
+            <h4 class="text" id="error-msg" data-error="<%= error ? error : '' %>"></h4>
             <button type="submit" class="Register-btn">confirm</button>
         </form>
-        <script src="register.js"></script>
+        <script src="/register.js"></script>
 
         <div class="box-link">
-            <a href="/form-login" class="small-link">Login</a>
+            <a href="/Go/form-login" class="small-link">Login</a>
             <a href="#" class="small-link">Forgot password</a>
         </div>
     </div>
