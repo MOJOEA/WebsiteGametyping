@@ -9,7 +9,7 @@
 <body>
     <div class="login-container">
         <h2 class="text">Login</h2>
-        <form action="/WebsiteLogin/process-login.php" id="LoginForm" method="POST">
+        <form action="/process/login" id="LoginForm" method="POST">
 
             <input type="text" id="username" name="username" placeholder="Username" class="input-box">
 
@@ -18,11 +18,14 @@
                 <button type="button" class="toggle-btn" onclick="togglePassword()">👁</button>
             </div>
 
-            <h4 class="text" id="error-msg" ></h4>
+            <h4 class="text" id="error-msg">
+  <%= typeof error !== "undefined" ? error : "" %>
+</h4>
 
             <button type="submit" class="login-btn">Login</button>
         </form>
-        <script src="login.js"></script>
+        <script src="/login.js"></script>
+        
         <div class="box-link">
             <a href="/Go/form-register" class="small-link">Sign in</a> / 
             <a href="#" class="small-link">Forgot password</a>
