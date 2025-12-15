@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
 
     const text = await res.text();
     errorMsg.innerText = text;
-    errorMsg.style.color = text.includes("สำเร็จ") ? "green" : "red";
+    errorMsg.style.color = text.includes("success") ? "green" : "red";
 
   } catch (err) {
     errorMsg.innerText = "เกิดข้อผิดพลาด!";
