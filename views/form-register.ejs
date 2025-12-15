@@ -39,7 +39,8 @@
                 placeholder="Confirm Password" 
                 class="input-box">
 
-            <h4 class="text" id="error-msg" data-error="<%= error ? error : '' %>"></h4>
+            <h4 class="text" id="error-msg"><%= typeof error !== "undefined" ? error : "" %></h4>
+            
             <button type="submit" class="Register-btn">confirm</button>
         </form>
         <script src="/register.js"></script>
