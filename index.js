@@ -22,16 +22,14 @@ app.set("view engine", "ejs");
 
 const ifNotLoggedin = (req, res, next) => {
   if (!req.session.isLoggedIn) {
-    return res.render("/Go/form-login");
+    return res.redirect("/Go/form-login");
   }
   next();
 };
 
 // Routes
-const registerRoutes = require("./routes/register.routes");
-app.use("/process", registerRoutes);
-const loginRoutes = require("./routes/login.routes");
-app.use("/process", loginRoutes);
+const serviceUserRoutes = require("./routes/auth.routes");
+app.use("/process", serviceUserRoutes);
 const pageRoutes = require("./routes/page.routes");
 app.use("/Go", pageRoutes);
 
