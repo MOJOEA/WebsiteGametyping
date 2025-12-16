@@ -1,7 +1,7 @@
-const db = require("../database");
+const dbConnection = require("../database");
 
 exports.findByEmail = async (email) => {
-    const [user] = await db.query(
+    const [user] = await dbConnection.query(
         "SELECT * FROM account WHERE email = ?",
         [email]
     );
@@ -9,7 +9,7 @@ exports.findByEmail = async (email) => {
 };
 
 exports.searchUser = async (username) => {
-    const [user] = await db.query(
+    const [user] = await dbConnection.query(
         "SELECT * FROM account WHERE username = ?",
         [username]
     );
@@ -17,7 +17,7 @@ exports.searchUser = async (username) => {
 };
 
 exports.create = async (data) => {
-    return db.query(
+    return dbConnection.query(
         `INSERT INTO account
         (userID, username, email, password, salt, role, images_account, login_count_account, lock_account, ban_account)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
