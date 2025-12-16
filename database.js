@@ -1,6 +1,5 @@
 const mysql = require("mysql2");
 
-// สร้าง connection
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -8,7 +7,6 @@ const connection = mysql.createConnection({
   database: "programing_world"
 });
 
-// แปลงเป็น promise เพื่อใช้ await
 const dbConnection = connection.promise();
 
 dbConnection.connect()
