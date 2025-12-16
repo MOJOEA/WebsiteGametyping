@@ -1,13 +1,13 @@
 const bcrypt = require("bcrypt");
-const Account = require("../models/account.model");
+const Account = require("../model/account.model");
 
 exports.register = async (req, res) => {
     try{
-        const {username, useremail, password, confirm} = req.body;
+        const {username, useremail, password, confirmPassword} = req.body;
         if (!username) return res.send("กรุณากรอก username");
         if (!useremail) return res.send("กรุณากรอก Email");
-        if (!password) return res.send("กรุณากรอก password");
-        if (password != confirm) return res.send("password ไม่ตรงกัน");
+        if (!password) return res.send("กรุณากรอก password")
+        if (password !== confirmPassword) return res.send("password ไม่ตรงกัน");
 
         const exist = await Account.findByEmail(useremail);
         if (exist) {
@@ -50,7 +50,6 @@ exports.login = async (req, res) => {
         req.session.isLoggedIn = true;
         req.session.userID = user.userID;
 
-        return res.send("Login success!");
     }catch (err){
         console.error(err);
         return res.send("เกิดข้อผิดพลาด");
