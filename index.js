@@ -28,8 +28,8 @@ const ifNotLoggedin = (req, res, next) => {
 };
 
 // Routes
-const serviceUserRoutes = require("./routes/auth.routes");
-app.use("/process", serviceUserRoutes);
+const authRoutes = require("./routes/auth.routes");
+app.use("/process", authRoutes);
 const pageRoutes = require("./routes/page.routes");
 app.use("/Go", pageRoutes);
 
